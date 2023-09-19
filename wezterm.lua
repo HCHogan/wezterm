@@ -8,11 +8,21 @@ end
 -- local font_name = "Cartograph CF"
 local font_name = "FiraCode Nerd Font"
 
-return {
-	-- OpenGL for GPU acceleration, Software for CPU
-	front_end = "OpenGL",
+local custom = wezterm.color.get_builtin_schemes()["Catppuccin Mocha"]
+custom.background = "#000000"
+custom.tab_bar.background = "#040404"
+custom.tab_bar.inactive_tab.bg_color = "#0f0f0f"
+custom.tab_bar.new_tab.bg_color = "#080808"
 
-	color_scheme = 'Catppuccin Mocha',
+return {
+	front_end = "WebGpu",
+	window_decorations = "RESIZE",
+
+	color_schemes = {
+		["OLEDppuccin"] = custom,
+	},
+
+	color_scheme = "Catppuccin Mocha",
 
 	-- Font config
 	font = font_with_fallback(font_name),
@@ -31,9 +41,9 @@ return {
 		},
 	},
 	warn_about_missing_glyphs = false,
-	font_size = 11,
+	font_size = 16,
 	line_height = 1.0,
-	dpi = 157.35,
+	-- dpi = 157.35,
 
 	-- Cursor style
 	default_cursor_style = "BlinkingUnderline",
@@ -160,6 +170,7 @@ return {
 	automatically_reload_config = true,
 	inactive_pane_hsb = { saturation = 1.0, brightness = 1.0 },
 	window_background_opacity = 0.4,
+	macos_window_background_blur = 20,
 	window_close_confirmation = "NeverPrompt",
-  window_frame = { active_titlebar_bg = "#45475a", font = font_with_fallback(font_name, { bold = true }) },
+	window_frame = { active_titlebar_bg = "#45475a", font = font_with_fallback(font_name, { bold = true }) },
 }
