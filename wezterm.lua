@@ -37,12 +37,19 @@ local wezterm = require("wezterm")
 -- end)
 
 local function font_with_fallback(name, params)
-	local names = { name, "Apple Color Emoji", "azuki_font" }
+	local names = { name, "FiraCode Nerd Font", "Apple Color Emoji", "azuki_font" }
 	return wezterm.font_with_fallback(names, params)
 end
 
--- local font_name = "Cartograph CF"
-local font_name = "FiraCode Nerd Font"
+-- local font_name = "CartographCF Nerd Font"
+-- local font_name = "Fira Code iScript"
+-- local font_name = "FiraCode Nerd Font"
+-- local font_name = "Operator Mono Lig"
+-- local font_name = "Fisa Code"
+-- local font_name = "Cascadia Code"
+local font_name = "Recursive"
+-- local font_name = "Quando"
+-- local font_name = "Operator Mono"
 
 local custom = wezterm.color.get_builtin_schemes()["Catppuccin Mocha"]
 custom.background = "#000000"
@@ -51,7 +58,8 @@ custom.tab_bar.inactive_tab.bg_color = "#0f0f0f"
 custom.tab_bar.new_tab.bg_color = "#080808"
 
 return {
-	front_end = "OpenGL",
+	front_end = "WebGpu",
+	-- front_end = "OpenGL",
 	-- window_decorations = "INTEGRATED_BUTTONS|RESIZE",
 	window_decorations = "RESIZE",
 	native_macos_fullscreen_mode = true,
@@ -69,11 +77,12 @@ return {
 	font_rules = {
 		{
 			italic = true,
-			font = font_with_fallback(font_name, { italic = true }),
+			font = font_with_fallback(font_name, { italic = true, weight = "Regular" }),
 		},
 		{
 			italic = false,
-			font = font_with_fallback(font_name, { bold = false }),
+			-- font = font_with_fallback(font_name, { bold = false }),
+			font = font_with_fallback(font_name, { italic = false, weight = "Regular" }),
 		},
 		{
 			intensity = "Bold",
@@ -83,13 +92,14 @@ return {
 	warn_about_missing_glyphs = false,
 	font_size = 16,
 	line_height = 1.0,
-	-- dpi = 157.35,
+	-- dpi = 144,
 
 	-- Cursor style
 	default_cursor_style = "BlinkingUnderline",
+	cursor_blink_rate = 0,
 
 	-- X11
-	enable_wayland = true,
+	-- enable_wayland = true,
 
 	-- Keybinds
 	disable_default_key_bindings = true,
@@ -210,13 +220,13 @@ return {
 	hide_tab_bar_if_only_one_tab = true,
 	show_tab_index_in_tab_bar = false,
 	use_fancy_tab_bar = true,
-	-- tab_bar_at_bottom = true,
+	tab_bar_at_bottom = true,
 
 	-- General
 	automatically_reload_config = true,
 	inactive_pane_hsb = { saturation = 1.0, brightness = 1.0 },
-	window_background_opacity = 0.4,
-	macos_window_background_blur = 20,
+	window_background_opacity = 0.85,
+	macos_window_background_blur = 40,
 	window_close_confirmation = "NeverPrompt",
 	window_frame = { active_titlebar_bg = "#45475a", font = font_with_fallback(font_name, { bold = true }) },
 }
