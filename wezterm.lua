@@ -99,7 +99,7 @@ return {
 	cursor_blink_rate = 0,
 
 	-- X11
-	-- enable_wayland = true,
+	enable_wayland = true,
 
 	-- Keybinds
 	disable_default_key_bindings = true,
