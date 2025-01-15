@@ -61,7 +61,7 @@ return {
 	front_end = "WebGpu",
 	-- front_end = "OpenGL",
 	-- window_decorations = "INTEGRATED_BUTTONS|RESIZE",
-	window_decorations = "RESIZE",
+	window_decorations = "RESIZE | TITLE",
 	native_macos_fullscreen_mode = true,
 
 	color_schemes = {
