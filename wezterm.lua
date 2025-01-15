@@ -90,12 +90,12 @@ return {
 		},
 	},
 	warn_about_missing_glyphs = false,
-	font_size = 16,
+	font_size = 11.5,
 	line_height = 1.0,
 	-- dpi = 144,
 
 	-- Cursor style
-	default_cursor_style = "BlinkingUnderline",
+	default_cursor_style = "SteadyBar",
 	cursor_blink_rate = 0,
 
 	-- X11
