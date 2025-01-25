@@ -197,6 +197,15 @@ local config = {
   window_frame = { active_titlebar_bg = "#45475a", font = font_with_fallback(font_name, { bold = true }) },
 }
 
-bar.apply_to_config(config)
+bar.apply_to_config(
+  config,
+  {
+    modules = {
+      leader = {
+        enabled = false;
+      }
+    }
+  }
+)
 
 return config
