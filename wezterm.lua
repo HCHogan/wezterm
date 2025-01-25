@@ -198,15 +198,14 @@ local config = {
 }
 
 bar.apply_to_config(
-  config
-  -- ,
-  -- {
-  --   modules = {
-  --     leader = {
-  --       enabled = false;
-  --     }
-  --   }
-  -- }
+  config,
+  {
+    modules = {
+      pane = {
+        enabled = false,
+      }
+    }
+  }
 )
 
 return config
