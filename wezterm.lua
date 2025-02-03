@@ -175,10 +175,10 @@ local config = {
   bold_brightens_ansi_colors = true,
   -- Padding
   window_padding = {
-    left = 5,
-    right = 5,
-    top = 5,
-    bottom = 5,
+    left = 0,
+    right = 0,
+    top = 0,
+    bottom = 0,
   },
 
   -- Tab Bar
