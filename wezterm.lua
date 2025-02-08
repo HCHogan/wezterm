@@ -198,7 +198,7 @@ local config = {
 }
 
 if triple == "aarch64-apple-darwin" then
-  config.font_size = 16
+  config.font_size = 15
   config.window_decorations = "RESIZE"
 end
 
