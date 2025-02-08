@@ -1,4 +1,5 @@
 local wezterm = require("wezterm")
+local triple = wezterm.target_triple
 
 local function font_with_fallback(name, params)
   local names = { name, "FiraCode Nerd Font", "Apple Color Emoji", "azuki_font" }
@@ -27,7 +28,6 @@ local config = {
   front_end = "WebGpu",
   -- front_end = "OpenGL",
   -- window_decorations = "INTEGRATED_BUTTONS|RESIZE",
-  window_decorations = "RESIZE | TITLE",
   native_macos_fullscreen_mode = true,
 
   color_schemes = {
@@ -196,6 +196,11 @@ local config = {
   window_close_confirmation = "NeverPrompt",
   window_frame = { active_titlebar_bg = "#45475a", font = font_with_fallback(font_name, { bold = true }) },
 }
+
+if triple == "aarch64-apple-darwin" then
+  config.font_size = 16
+  config.window_decorations = "RESIZE"
+end
 
 bar.apply_to_config(
   config,
