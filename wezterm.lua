@@ -34,7 +34,8 @@ local config = {
     ["OLEDppuccin"] = custom,
   },
 
-  color_scheme = "Catppuccin Mocha",
+  -- color_scheme = "Catppuccin Mocha",
+  color_scheme = "iceberg-dark",
   initial_cols = 96,
   initial_rows = 32,
 
