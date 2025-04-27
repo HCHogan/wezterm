@@ -12,8 +12,8 @@ end
 -- local font_name = "Operator Mono Lig"
 -- local font_name = "Fisa Code"
 -- local font_name = "Cascadia Code"
--- local font_name = "Recursive"
-local font_name = "RecMonoSmCasual Nerd Font Propo"
+local font_name = "Recursive"
+-- local font_name = "RecMonoSmCasual Nerd Font Propo"
 -- local font_name = "Quando"
 -- local font_name = "Operator Mono"
 
