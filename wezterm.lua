@@ -98,7 +98,7 @@ local config = {
 
   -- color_scheme = "Catppuccin Mocha",
   -- color_scheme = "iceberg-dark",
-  color_scheme = "Noirbuddy",
+  color_scheme = "OLEDppuccin",
   initial_cols = 96,
   initial_rows = 32,
 
