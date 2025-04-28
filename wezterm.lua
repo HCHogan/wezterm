@@ -36,7 +36,7 @@ local config = {
   },
 
   -- color_scheme = "Catppuccin Mocha",
-  color_scheme = "City Streets (terminal.sexy)",
+  color_scheme = "iceberg-dark",
   initial_cols = 96,
   initial_rows = 32,
 
