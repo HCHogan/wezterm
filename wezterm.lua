@@ -25,6 +25,66 @@ custom.tab_bar.new_tab.bg_color = "#080808"
 
 local bar = wezterm.plugin.require("https://github.com/adriankarlen/bar.wezterm")
 
+local colors = {
+  -- 通用
+  background     = '#131313',
+  foreground     = '#A3BE8C',
+  cursor_bg      = '#A3BE8C',
+  cursor_border  = '#A3BE8C',
+  cursor_fg      = '#131313',
+  selection_bg   = '#8FBCBB',
+  selection_fg   = '#131313',
+
+  -- ANSI 8 色正常
+  ansi = {
+    '#212121', -- noir_9 当作 Black
+    '#BF616A', -- diagnostic_error 当作 Red
+    '#A3BE8C', -- diff_add 当作 Green
+    '#EBCB8B', -- diagnostic_warning 当作 Yellow
+    '#8FBCBB', -- secondary 当作 Blue
+    '#B48EAD', -- diagnostic_info 当作 Magenta
+    '#D08770', -- diagnostic_hint 当作 Cyan
+    '#D5D5D5', -- noir_2 当作 White
+  },
+  -- ANSI 8 色高亮
+  brights = {
+    '#323232', -- noir_8 Bright Black
+    '#BF616A', -- Red
+    '#A3BE8C', -- Green
+    '#EBCB8B', -- Yellow
+    '#8FBCBB', -- Blue
+    '#B48EAD', -- Magenta
+    '#D08770', -- Cyan
+    '#F5F5F5', -- noir_1 Bright White
+  },
+
+  -- 选项卡栏
+  tab_bar = {
+    background = '#121212',  -- 来自 minimal 预设的原始 background
+    active_tab = {
+      bg_color = '#131313',
+      fg_color = '#A3BE8C',
+      intensity = 'Bold',
+    },
+    inactive_tab = {
+      bg_color = '#212121',
+      fg_color = '#737373',  -- noir_6
+    },
+    inactive_tab_hover = {
+      bg_color = '#323232',  -- noir_8
+      fg_color = '#949494',  -- noir_5
+    },
+    new_tab = {
+      bg_color = '#212121',
+      fg_color = '#8FBCBB',
+    },
+    new_tab_hover = {
+      bg_color = '#323232',
+      fg_color = '#D08770',
+    },
+  },
+};
+
 local config = {
   front_end = "WebGpu",
   -- front_end = "OpenGL",
@@ -33,10 +93,12 @@ local config = {
 
   color_schemes = {
     ["OLEDppuccin"] = custom,
+    ["Noirbuddy"] = colors,
   },
 
   -- color_scheme = "Catppuccin Mocha",
-  color_scheme = "iceberg-dark",
+  -- color_scheme = "iceberg-dark",
+  color_scheme = "Noirbuddy",
   initial_cols = 96,
   initial_rows = 32,
 
