@@ -96,9 +96,9 @@ local config = {
     ["Noirbuddy"] = colors,
   },
 
-  -- color_scheme = "Catppuccin Mocha",
+  color_scheme = "Mono Theme (terminal.sexy)",
   -- color_scheme = "iceberg-dark",
-  color_scheme = "OLEDppuccin",
+  -- color_scheme = "OLEDppuccin",
   initial_cols = 96,
   initial_rows = 32,
 
