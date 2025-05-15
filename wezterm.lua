@@ -27,16 +27,16 @@ local bar = wezterm.plugin.require("https://github.com/adriankarlen/bar.wezterm"
 
 local colors = {
   -- 通用
-  background     = '#131313',
-  foreground     = '#A3BE8C',
-  cursor_bg      = '#A3BE8C',
-  cursor_border  = '#A3BE8C',
-  cursor_fg      = '#131313',
-  selection_bg   = '#8FBCBB',
-  selection_fg   = '#131313',
+  background    = '#131313',
+  foreground    = '#A3BE8C',
+  cursor_bg     = '#A3BE8C',
+  cursor_border = '#A3BE8C',
+  cursor_fg     = '#131313',
+  selection_bg  = '#8FBCBB',
+  selection_fg  = '#131313',
 
   -- ANSI 8 色正常
-  ansi = {
+  ansi          = {
     '#212121', -- noir_9 当作 Black
     '#BF616A', -- diagnostic_error 当作 Red
     '#A3BE8C', -- diff_add 当作 Green
@@ -47,7 +47,7 @@ local colors = {
     '#D5D5D5', -- noir_2 当作 White
   },
   -- ANSI 8 色高亮
-  brights = {
+  brights       = {
     '#323232', -- noir_8 Bright Black
     '#BF616A', -- Red
     '#A3BE8C', -- Green
@@ -59,8 +59,8 @@ local colors = {
   },
 
   -- 选项卡栏
-  tab_bar = {
-    background = '#121212',  -- 来自 minimal 预设的原始 background
+  tab_bar       = {
+    background = '#121212', -- 来自 minimal 预设的原始 background
     active_tab = {
       bg_color = '#131313',
       fg_color = '#A3BE8C',
@@ -68,11 +68,11 @@ local colors = {
     },
     inactive_tab = {
       bg_color = '#212121',
-      fg_color = '#737373',  -- noir_6
+      fg_color = '#737373', -- noir_6
     },
     inactive_tab_hover = {
-      bg_color = '#323232',  -- noir_8
-      fg_color = '#949494',  -- noir_5
+      bg_color = '#323232', -- noir_8
+      fg_color = '#949494', -- noir_5
     },
     new_tab = {
       bg_color = '#212121',
@@ -85,7 +85,44 @@ local colors = {
   },
 };
 
+local kanso = {
+  foreground = "#C5C9C7",
+  background = "#090E13",
+
+  cursor_bg = "#090E13",
+  cursor_fg = "#C5C9C7",
+  cursor_border = "#C5C9C7",
+
+  selection_fg = "#C5C9C7",
+  selection_bg = "#24262D",
+
+  scrollbar_thumb = "#24262D",
+  split = "#24262D",
+
+  ansi = {
+    "#090E13",
+    "#C4746E",
+    "#8A9A7B",
+    "#C4B28A",
+    "#8BA4B0",
+    "#A292A3",
+    "#8EA4A2",
+    "#A4A7A4",
+  },
+  brights = {
+    "#A4A7A4",
+    "#E46876",
+    "#87A987",
+    "#E6C384",
+    "#7FB4CA",
+    "#938AA9",
+    "#7AA89F",
+    "#C5C9C7",
+  },
+}
+
 local config = {
+  force_reverse_video_cursor = true,
   front_end = "WebGpu",
   -- front_end = "OpenGL",
   -- window_decorations = "INTEGRATED_BUTTONS|RESIZE",
@@ -94,9 +131,10 @@ local config = {
   color_schemes = {
     ["OLEDppuccin"] = custom,
     ["Noirbuddy"] = colors,
+    ["Kanso"] = kanso,
   },
 
-  color_scheme = "Mono Theme (terminal.sexy)",
+  color_scheme = "Kanso",
   -- color_scheme = "iceberg-dark",
   -- color_scheme = "OLEDppuccin",
   initial_cols = 96,
@@ -104,21 +142,6 @@ local config = {
 
   -- Font config
   font = font_with_fallback(font_name),
-  font_rules = {
-    {
-      italic = true,
-      font = font_with_fallback(font_name, { italic = true, weight = "Regular" }),
-    },
-    {
-      italic = false,
-      -- font = font_with_fallback(font_name, { bold = false }),
-      font = font_with_fallback(font_name, { italic = false, weight = "Regular" }),
-    },
-    {
-      intensity = "Bold",
-      font = font_with_fallback(font_name, { bold = true }),
-    },
-  },
   warn_about_missing_glyphs = false,
   font_size = 11.5,
   line_height = 1.0,
