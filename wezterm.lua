@@ -122,7 +122,7 @@ local kanso = {
 }
 
 local config = {
-  force_reverse_video_cursor = true,
+  force_reverse_video_cursor = false,
   front_end = "WebGpu",
   -- front_end = "OpenGL",
   -- window_decorations = "INTEGRATED_BUTTONS|RESIZE",
@@ -135,8 +135,6 @@ local config = {
   },
 
   color_scheme = "Kanso",
-  -- color_scheme = "iceberg-dark",
-  -- color_scheme = "OLEDppuccin",
   initial_cols = 96,
   initial_rows = 32,
 
