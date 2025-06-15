@@ -85,41 +85,6 @@ local colors = {
   },
 };
 
-local kanso = {
-  foreground = "#C5C9C7",
-  background = "#090E13",
-
-  cursor_bg = "#090E13",
-  cursor_fg = "#C5C9C7",
-  cursor_border = "#C5C9C7",
-
-  selection_fg = "#C5C9C7",
-  selection_bg = "#24262D",
-
-  scrollbar_thumb = "#24262D",
-  split = "#24262D",
-
-  ansi = {
-    "#090E13",
-    "#C4746E",
-    "#8A9A7B",
-    "#C4B28A",
-    "#8BA4B0",
-    "#A292A3",
-    "#8EA4A2",
-    "#A4A7A4",
-  },
-  brights = {
-    "#A4A7A4",
-    "#E46876",
-    "#87A987",
-    "#E6C384",
-    "#7FB4CA",
-    "#938AA9",
-    "#7AA89F",
-    "#C5C9C7",
-  },
-}
 
 local config = {
   force_reverse_video_cursor = false,
@@ -134,7 +99,43 @@ local config = {
     ["Kanso"] = kanso,
   },
 
-  color_scheme = "Kanso",
+  colors = {
+    foreground = "#C5C9C7",
+    background = "#090E13",
+
+    cursor_bg = "#090E13",
+    cursor_fg = "#C5C9C7",
+    cursor_border = "#C5C9C7",
+
+    selection_fg = "#C5C9C7",
+    selection_bg = "#24262D",
+
+    scrollbar_thumb = "#24262D",
+    split = "#24262D",
+
+    ansi = {
+      "#090E13",
+      "#C4746E",
+      "#8A9A7B",
+      "#C4B28A",
+      "#8BA4B0",
+      "#A292A3",
+      "#8EA4A2",
+      "#A4A7A4",
+    },
+    brights = {
+      "#A4A7A4",
+      "#E46876",
+      "#87A987",
+      "#E6C384",
+      "#7FB4CA",
+      "#938AA9",
+      "#7AA89F",
+      "#C5C9C7",
+    },
+  },
+
+  -- color_scheme = "Kanso",
   initial_cols = 96,
   initial_rows = 32,
 
@@ -285,6 +286,12 @@ local config = {
 if triple == "aarch64-apple-darwin" then
   config.font_size = 15
   config.window_decorations = "RESIZE"
+end
+
+if triple == "x86_64-pc-windows-msvc" then
+  config.window_decorations = "RESIZE"
+  config.default_prog = { 'powershell' }
+  config.font_size = 11.5
 end
 
 bar.apply_to_config(
